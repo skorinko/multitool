@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Short History of the Highlighter Pen · The Margin</title>
+<meta name="description" content="A page to try Text Highlighter for Safari on: select a sentence and pick a colour.">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { color-scheme: light; --bg: #fbfaf7; --fg: #23211d; --muted: #77726a; --rule: #e7e3db; --link: #8a4b0f; --card: #f3f0e9; }
+  /* ?dark, or the reader's dark mode: a dark site, to see the marks on one. */
+  .dark { color-scheme: dark; --bg: #16171a; --fg: #dcdad5; --muted: #9a978f; --rule: #2c2d31; --link: #f0b26a; --card: #212226; }
+  @media (prefers-color-scheme: dark) { :root:not(.light) { color-scheme: dark; --bg: #16171a; --fg: #dcdad5; --muted: #9a978f; --rule: #2c2d31; --link: #f0b26a; --card: #212226; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 19px/1.65 Charter, "Iowan Old Style", Georgia, serif; -webkit-font-smoothing: antialiased; }
+  .top { border-bottom: 1px solid var(--rule); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  .masthead { font: 700 20px/1 -apple-system, "Helvetica Neue", sans-serif; letter-spacing: -0.02em; color: var(--fg); text-decoration: none; }
+  .masthead span { color: var(--link); }
+  .top nav { font: 15px -apple-system, "Helvetica Neue", sans-serif; display: flex; gap: 20px; }
+  .top nav a { color: var(--muted); text-decoration: none; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .tip { margin: 26px 0 0; padding: 12px 16px; border-radius: 10px; background: var(--card); font: 15px/1.45 -apple-system, "Helvetica Neue", sans-serif; color: var(--muted); }
+  .tip strong { color: var(--fg); }
+  h1 { font: 700 44px/1.12 -apple-system, "Helvetica Neue", sans-serif; letter-spacing: -0.025em; margin: 34px 0 10px; }
+  .dek { font-size: 22px; color: var(--muted); margin: 0 0 14px; }
+  .byline { font: 14px -apple-system, "Helvetica Neue", sans-serif; color: var(--muted); margin: 0 0 30px; }
+  h2 { font: 700 26px/1.2 -apple-system, "Helvetica Neue", sans-serif; letter-spacing: -0.015em; margin: 40px 0 8px; }
+  a { color: var(--link); }
+  blockquote { margin: 1.4em 0; padding: 0 0 0 22px; border-left: 3px solid var(--link); font-style: italic; color: var(--muted); }
+  table { border-collapse: collapse; margin: 1.2em 0; font-size: 17px; }
+  td, th { border-bottom: 1px solid var(--rule); padding: 8px 18px 8px 0; text-align: left; }
+  code { font: 16px ui-monospace, Menlo, monospace; background: var(--card); padding: 1px 5px; border-radius: 4px; }
+  footer { border-top: 1px solid var(--rule); margin-top: 60px; padding: 24px 0 48px; font: 14px -apple-system, "Helvetica Neue", sans-serif; color: var(--muted); }
+  @media (max-width: 600px) { body { font-size: 18px; } h1 { font-size: 34px; } .dek { font-size: 19px; } .top nav { display: none; } }
+</style>
+<script>
+  // ?dark and ?light pick a theme regardless of the system setting; ?shot hides the tip.
+  const q = location.search;
+  if (/[?&]dark\b/.test(q)) document.documentElement.classList.add('dark');
+  if (/[?&]light\b/.test(q)) document.documentElement.classList.add('light');
+  if (/[?&]shot\b/.test(q)) document.documentElement.classList.add('shot');
+</script>
+<style>.shot .tip { display: none; }</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="masthead" href="./">The <span>Margin</span></a>
+  <nav><a href="#">Ideas</a><a href="#">Tools</a><a href="#">Reading</a></nav>
+</div></header>
+<main class="wrap">
+<p class="tip"><strong>Try Text Highlighter here.</strong> Select a sentence and pick a colour in the bar that appears. Reload the page: your highlights come back. Click one to add a note.</p>
+<article>
+<h1>A Short History of the Highlighter Pen</h1>
+<p class="dek">How a stripe of see-through ink became the way we keep what matters.</p>
+<p class="byline">By the editors · 6 minute read</p>
+
+<p>Long before anyone carried a screen in a pocket, readers marked what mattered with whatever was at hand. Monks ruled thin lines under passages in red ink, students pressed their thumbnails into the margins of borrowed books, and lawyers folded down the corners of pages until a brief looked like a fan.</p>
+
+<p>The <strong>felt-tip pen</strong> changed that habit in the early 1960s. A porous tip fed by a reservoir of ink made a line that was <em>wide, even and quick</em>, and a translucent ink let the printed words show through. What had been a scratch in the margin became a band of colour across the text itself.</p>
+
+<h2>How the ink works</h2>
+
+<p>Highlighter ink is mostly water, a little alcohol, and a fluorescent dye. The dye absorbs ultraviolet light and gives it back as visible light, which is why a yellow stripe seems to glow on a white page. Yellow became the favourite because it is the colour our eyes find brightest, and because a photocopier of the time would not reproduce it, so a marked page could be copied clean.</p>
+
+<ul>
+  <li>Yellow is the brightest to the eye and the most common.</li>
+  <li>Green and blue are calmer, and many readers keep them for definitions.</li>
+  <li>Pink and purple stand out on pages that are already full of yellow.</li>
+</ul>
+
+<p>Every good habit has its critics. A teacher once wrote that a highlighted textbook is a book its owner has decided to read later. The trick is to mark less, not more. Readers who mark a whole paragraph learn little from the mark; readers who choose a single sentence have already done the thinking.</p>
+
+<blockquote><p>A highlight is a note to your future self that says: this one, not the others.</p></blockquote>
+
+<h2>A system of colours</h2>
+
+<p>Some readers give each colour a job. One common scheme uses yellow for the main idea, green for evidence, blue for a definition and pink for a question to come back to. A scheme only helps if it stays simple enough to use without stopping to think about it.</p>
+
+<table>
+  <thead><tr><th>Colour</th><th>Job</th></tr></thead>
+  <tbody>
+    <tr><td>Yellow</td><td>The main idea of a passage</td></tr>
+    <tr><td>Green</td><td>Evidence and numbers</td></tr>
+    <tr><td>Blue</td><td>Definitions and names</td></tr>
+    <tr><td>Pink</td><td>Questions to come back to</td></tr>
+  </tbody>
+</table>
+
+<h2>Marks that find their way back</h2>
+
+<p>On the web, the same idea took longer to arrive. Pages change, move and disappear, and a mark has to find its text again on the next visit. The trick is to remember not only <code>where</code> the words were, but also what they said and what came just before and after them. A sentence that moved down the page is still the same sentence, and a sentence with one word corrected is nearly the same.</p>
+
+<p>That is also why a good highlighter never throws a mark away. When the words are truly gone, the quote is still worth keeping, together with the note you wrote beside it and the address of the page it came from.</p>
+
+<p>The last paragraph of this article is here to be marked. Choose the sentence that says the most to you, give it a colour, and come back to this page tomorrow to see it waiting.</p>
+</article>
+<footer>A page to try <a href="./">Text Highlighter for Safari</a> on. The article is written for this demo.</footer>
+</main>
+</body>
+</html>

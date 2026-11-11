@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ten quiet places to watch the sun go down · Northlight Journal</title>
+  <meta name="description" content="A demo page for Full Page Screenshot: a long travel story with a sticky header, pictures that load as you scroll and a cookie bar, the parts other screenshot tools get wrong.">
+  <link rel="icon" href="demo/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: light; --ink: #1d1b22; --muted: #625d6b; --line: #e7e3ea; --paper: #fbfaf8; --accent: #b4483c; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.65 ui-serif, "New York", Georgia, serif; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    .demo-note { padding: 10px 16px; background: #13305e; color: #fff; font: 14px/1.4 -apple-system, system-ui, sans-serif; text-align: center; }
+    .demo-note b { color: #9cc7ff; }
+    html.shot .demo-note { display: none; }
+    header.top { position: sticky; top: 0; z-index: 10; background: rgba(251, 250, 248, 0.94); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+    .top-in { display: flex; align-items: center; gap: 28px; max-width: 1160px; margin: 0 auto; padding: 14px 24px; font-family: -apple-system, system-ui, sans-serif; }
+    .logo { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font: 700 20px/1 ui-serif, Georgia, serif; letter-spacing: -0.01em; }
+    .logo svg { width: 28px; height: 28px; }
+    nav.main { display: flex; gap: 22px; font-size: 15px; }
+    nav.main a { color: var(--muted); text-decoration: none; }
+    .subscribe { margin-left: auto; padding: 8px 14px; border-radius: 999px; background: var(--ink); color: #fff; font: 600 14px -apple-system, system-ui, sans-serif; text-decoration: none; }
+    main { max-width: 1160px; margin: 0 auto; padding: 0 24px 64px; display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; }
+    article { max-width: 720px; }
+    .kicker { margin: 40px 0 10px; color: var(--accent); font: 600 13px -apple-system, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: 46px; line-height: 1.08; letter-spacing: -0.02em; }
+    .byline { display: flex; align-items: center; gap: 10px; margin: 18px 0 26px; color: var(--muted); font: 14px -apple-system, system-ui, sans-serif; }
+    .byline img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; }
+    figure { margin: 0 0 26px; }
+    figure img { width: 100%; height: auto; display: block; border-radius: 6px; background: #e9e4dd; }
+    figcaption { margin-top: 8px; color: var(--muted); font: 13px -apple-system, system-ui, sans-serif; }
+    h2 { margin: 40px 0 8px; font-size: 26px; letter-spacing: -0.01em; scroll-margin-top: 80px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0 30px; }
+    .gallery img { width: 100%; height: auto; display: block; border-radius: 4px; background: #e9e4dd; }
+    aside { padding-top: 40px; font-family: -apple-system, system-ui, sans-serif; font-size: 14px; }
+    .side { position: sticky; top: 90px; }
+    aside h3 { margin: 0 0 12px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .card { padding: 18px; margin-bottom: 22px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .card p { margin: 0 0 8px; }
+    .toc a { display: block; padding: 4px 0; color: var(--ink); text-decoration: none; }
+    footer.bottom { max-width: 1160px; margin: 0 auto; padding: 24px 24px 90px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 20px; color: var(--muted); font: 14px -apple-system, system-ui, sans-serif; }
+    footer.bottom a { color: var(--muted); }
+    .cookies { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 20; display: flex; align-items: center; gap: 16px; width: min(720px, calc(100% - 32px)); padding: 12px 16px; border-radius: 12px; background: #1d1b22; color: #fff; font: 14px/1.4 -apple-system, system-ui, sans-serif; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); }
+    .cookies p { margin: 0; flex: 1; }
+    .cookies button { border: 0; border-radius: 999px; padding: 7px 14px; background: #fff; color: #1d1b22; font: 600 13px -apple-system, system-ui, sans-serif; cursor: pointer; }
+    @media (max-width: 900px) { main { grid-template-columns: 1fr; } nav.main, aside { display: none; } h1 { font-size: 34px; } .gallery { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+  <script>if (/[?&]shot\b/.test(location.search)) document.documentElement.classList.add('shot');</script>
+</head>
+<body>
+  <p class="demo-note"><b>Demo page for Full Page Screenshot.</b> Northlight Journal is made up. Click the Full Page Screenshot button in Safari’s toolbar, then Whole Page, or press ⌃⇧S. The header appears once, every picture loads, and the cookie bar sits at the bottom.</p>
+
+  <header class="top">
+    <div class="top-in">
+      <a class="logo" href="demo.html">
+        <svg viewBox="0 0 32 32" role="img" aria-label="Northlight"><circle cx="16" cy="16" r="15" fill="#2b2540"/><path d="M5 21c4-5 8-7 11-7s7 2 11 7" fill="none" stroke="#f2a65a" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="11" r="3.2" fill="#f2a65a"/></svg>
+        Northlight
+      </a>
+      <nav class="main" aria-label="Sections">
+        <a href="demo.html">Journal</a>
+        <a href="#p1">Destinations</a>
+        <a href="#gallery">Photo essays</a>
+        <a href="./">About</a>
+      </nav>
+      <a class="subscribe" href="#newsletter">Subscribe</a>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <p class="kicker">Travel · 12 min read</p>
+      <h1>Ten quiet places to watch the sun go down</h1>
+      <p class="byline"><img src="demo/fjord-square.jpg" alt="">By Mira Okafor · Photos by the Northlight team · 27 October 2026</p>
+
+      <figure>
+        <img src="demo/harbour-1200.jpg" width="1200" height="800" alt="An old harbour wall at dusk">
+        <figcaption>The old harbour wall, twenty minutes after sunset.</figcaption>
+      </figure>
+
+      <p>A good sunset needs three things: a clear western horizon, somewhere to sit, and nobody selling you anything. We asked readers for their favourite spots, then spent a summer checking them against sunset tables and the weather.</p>
+      <p>The light changes fastest in the ten minutes after the sun touches the horizon. That’s when the sky turns from gold to pink. Bring a jacket: it gets cold quickly once the sun has gone.</p>
+
+      <h2 id="p1">1. The cliff path</h2>
+      <figure><img src="demo/cliffs-1200.jpg" width="1200" height="800" alt="Sea cliffs under a pink sky" loading="lazy"></figure>
+      <p>Park at the lighthouse and follow the coastal path north for twenty minutes. The bench at the second bend faces due west, and the gulls settle on the ledges below as the light goes.</p>
+
+      <h2>2. The dunes at the end of the road</h2>
+      <figure><img src="demo/dunes-1200.jpg" width="1200" height="800" alt="Sand dunes with long shadows" loading="lazy"></figure>
+      <p>Bring water. The dune field holds the day’s heat long after dark, and the ridge line makes a perfect silhouette against the last of the orange.</p>
+
+      <h2>3. The fjord ferry</h2>
+      <figure><img src="demo/fjord-1200.jpg" width="1200" height="800" alt="A ferry crossing a fjord" loading="lazy"></figure>
+      <p>Take the last crossing of the day. The ferry turns west halfway over, and for a few minutes the whole deck is lit gold. Tickets are cheaper on board than at the terminal.</p>
+
+      <h2>4. The canyon rim, south side</h2>
+      <figure><img src="demo/canyon-1200.jpg" width="1200" height="800" alt="A canyon in evening light" loading="lazy"></figure>
+      <p>The south rim gets the crowds at noon and almost nobody at dusk. Walk ten minutes past the main lookout to a flat rock with a view straight down the canyon.</p>
+
+      <h2>5. The lake below the ridge</h2>
+      <figure><img src="demo/lake-1200.jpg" width="1200" height="800" alt="A still lake below a ridge" loading="lazy"></figure>
+      <p>On a still evening the lake doubles the sky. Arrive early: the car park is small, and the best stretch of shore is a short scramble from the jetty.</p>
+
+      <h2>6. The long meadow</h2>
+      <figure><img src="demo/meadow-1200.jpg" width="1200" height="800" alt="A long meadow at sunset" loading="lazy"></figure>
+      <p>A gentle walk from the village, with a single oak to sit under. The grass is cut in late July, so August visits are the most comfortable.</p>
+
+      <h2 id="gallery">More from the series</h2>
+      <div class="gallery">
+        <img src="demo/vineyard-480.jpg" width="480" height="320" alt="Terraced vineyard in violet light" loading="lazy">
+        <img src="demo/island-480.jpg" width="480" height="320" alt="An island jetty" loading="lazy">
+        <img src="demo/pines-480.jpg" width="480" height="320" alt="Pine ridge lookout" loading="lazy">
+        <img src="demo/harbour-480.jpg" width="480" height="320" alt="Harbour lights" loading="lazy">
+        <img src="demo/cliffs-480.jpg" width="480" height="320" alt="Cliffs at dusk" loading="lazy">
+        <img src="demo/lake-480.jpg" width="480" height="320" alt="Lake at dusk" loading="lazy">
+      </div>
+
+      <h2>7. The terraced vineyard</h2>
+      <figure><img src="demo/vineyard-1200.jpg" width="1200" height="800" alt="Vineyard terraces at sunset" loading="lazy"></figure>
+      <p>The top terrace looks over three valleys. The winery closes at six, but the footpath along the vines is open all evening.</p>
+
+      <h2>8. The island jetty</h2>
+      <figure><img src="demo/island-1200.jpg" width="1200" height="800" alt="A wooden jetty on an island" loading="lazy"></figure>
+      <p>Only reachable at low tide, which makes it worth checking the tide tables twice. Sit at the end of the jetty and the island’s shadow reaches out across the water toward you.</p>
+
+      <h2>9. The pine ridge lookout</h2>
+      <figure><img src="demo/pines-1200.jpg" width="1200" height="800" alt="A lookout above pine forest" loading="lazy"></figure>
+      <p>A steep forty minutes up, a fire lookout at the top, and a view over two hundred kilometres of forest. Bring a torch for the way down.</p>
+
+      <h2>10. Back where we started</h2>
+      <figure><img src="demo/harbour-1200.jpg" width="1200" height="800" alt="The harbour wall again" loading="lazy"></figure>
+      <p>The harbour wall again, because it’s the easiest of the ten and still the one we go back to. Get chips from the kiosk and sit on the steps by the old crane.</p>
+
+      <h2 id="newsletter">Tell us your place</h2>
+      <p>Know a better spot? Write to the editors, and we’ll visit it next summer.</p>
+    </article>
+
+    <aside>
+      <div class="side">
+        <div class="card">
+          <h3>Newsletter</h3>
+          <p>One quiet place a week, every Sunday.</p>
+        </div>
+        <div class="card toc">
+          <h3>In this story</h3>
+          <a href="#p1">The cliff path</a>
+          <a href="#gallery">More from the series</a>
+          <a href="#newsletter">Tell us your place</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="bottom">
+    <span>© 2026 Northlight Journal (a made-up magazine)</span>
+    <a href="../privacy.html">Privacy</a>
+    <a href="../support.html">Contact</a>
+  </footer>
+
+  <div class="cookies" role="region" aria-label="Cookies">
+    <p>Northlight uses no cookies. This bar is here to show that fixed bars appear once, at the bottom of the screenshot. OK closes it; reload the page to see it again.</p>
+    <button type="button">OK</button>
+  </div>
+  <script>
+    // OK closes the bar, as on a real site. Reload the page to bring it back.
+    document.querySelector('.cookies button').addEventListener('click', (e) => e.target.closest('.cookies').remove());
+  </script>
+</body>
+</html>

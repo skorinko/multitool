@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grandmother's Lemon Cake · The Pantry Journal</title>
+<meta name="description" content="A page that blocks right-click, copying, selection, pasting and printing, to try Page Unlocker for Safari on.">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { color-scheme: light; --bg: #fffdf8; --fg: #2a241d; --muted: #7b7166; --rule: #ece5d9; --accent: #b4541a; --card: #f6efe3; }
+  @media (prefers-color-scheme: dark) { :root:not(.light) { color-scheme: dark; --bg: #18160f; --fg: #e6dfd3; --muted: #a39887; --rule: #2e2a22; --accent: #f0a066; --card: #24211a; } }
+  * { box-sizing: border-box; }
+  /* The page's locks: no selection, no long-press menu, an invisible selection. */
+  body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; margin: 0; background: var(--bg); color: var(--fg); font: 19px/1.65 Charter, "Iowan Old Style", Georgia, serif; -webkit-font-smoothing: antialiased; }
+  ::selection { background: transparent; }
+  .top { border-bottom: 1px solid var(--rule); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  .masthead { font: 700 20px/1 -apple-system, "Helvetica Neue", sans-serif; letter-spacing: -0.02em; color: var(--fg); text-decoration: none; }
+  .masthead span { color: var(--accent); }
+  .top nav { font: 15px -apple-system, "Helvetica Neue", sans-serif; display: flex; gap: 20px; }
+  .top nav a { color: var(--muted); text-decoration: none; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .tip { margin: 26px 0 0; padding: 14px 18px; border-radius: 12px; background: var(--card); font: 15px/1.5 -apple-system, "Helvetica Neue", sans-serif; color: var(--muted); }
+  .tip strong { color: var(--fg); }
+  .tip ul { margin: 6px 0 0; padding-left: 20px; }
+  h1 { font: 700 44px/1.12 -apple-system, "Helvetica Neue", sans-serif; letter-spacing: -0.025em; margin: 34px 0 10px; }
+  .dek { font-size: 22px; color: var(--muted); margin: 0 0 14px; }
+  .byline { font: 14px -apple-system, "Helvetica Neue", sans-serif; color: var(--muted); margin: 0 0 26px; }
+  h2 { font: 700 26px/1.2 -apple-system, "Helvetica Neue", sans-serif; letter-spacing: -0.015em; margin: 38px 0 8px; }
+  .photo { position: relative; margin: 0 0 26px; }
+  .photo svg { display: block; width: 100%; height: auto; border-radius: 14px; }
+  /* A transparent layer over the photo, so right-click never reaches it. */
+  .photo .shield { position: absolute; inset: 0; }
+  .photo figcaption { font: 14px -apple-system, sans-serif; color: var(--muted); margin-top: 8px; }
+  ol li, ul li { margin: 4px 0; }
+  .newsletter { margin: 40px 0 0; padding: 20px 22px; border-radius: 14px; background: var(--card); font: 16px -apple-system, "Helvetica Neue", sans-serif; }
+  .newsletter h2 { margin-top: 0; font-size: 21px; }
+  .newsletter label { display: block; margin: 12px 0 4px; color: var(--muted); font-size: 14px; }
+  .newsletter input { font: 16px -apple-system, sans-serif; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--rule); width: 100%; max-width: 380px; background: var(--bg); color: var(--fg); }
+  .toast { position: fixed; left: 50%; top: 20px; transform: translateX(-50%); background: #2a241d; color: #fff; font: 600 15px -apple-system, sans-serif; padding: 10px 16px; border-radius: 10px; display: none; z-index: 10; }
+  footer { border-top: 1px solid var(--rule); margin-top: 60px; padding: 24px 0 48px; font: 14px -apple-system, "Helvetica Neue", sans-serif; color: var(--muted); }
+  @media print { body { display: none !important; } html::before { content: "Printing is not allowed on The Pantry Journal."; } }
+  @media (max-width: 600px) { body { font-size: 18px; } h1 { font-size: 34px; } .dek { font-size: 19px; } .top nav { display: none; } }
+</style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+<header class="top">
+  <div class="wrap">
+    <a class="masthead" href="#">The Pantry <span>Journal</span></a>
+    <nav><a href="#">Recipes</a><a href="#">Baking</a><a href="#">Seasons</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="tip" id="tip">
+    <strong>A page to try Page Unlocker on.</strong> This page blocks the usual things, the way some recipe, news and lyrics sites do. With Page Unlocker on, try:
+    <ul>
+      <li>right-clicking the text or the photo (or touching and holding on iPhone and iPad)</li>
+      <li>selecting a paragraph, copying it, and pasting it elsewhere: you get just your selection</li>
+      <li>pasting an email address into “Confirm email” below</li>
+      <li>printing the page</li>
+    </ul>
+    Then open Page Unlocker from the toolbar button to see what the page blocked.
+  </div>
+
+  <h1>Grandmother's Lemon Cake</h1>
+  <p class="dek">A plain loaf, soaked in lemon syrup while it's still warm. It keeps for a week and gets better every day.</p>
+  <p class="byline">By Ada Fennimore · Baking · 12 minutes to read</p>
+
+  <figure class="photo" id="photo">
+    <svg viewBox="0 0 720 360" role="img" aria-label="A lemon loaf on a board">
+      <rect width="720" height="360" fill="#f2d98a"/>
+      <circle cx="590" cy="80" r="120" fill="#f7e7a8"/>
+      <rect x="150" y="150" width="420" height="150" rx="38" fill="#d99a4e"/>
+      <rect x="150" y="150" width="420" height="58" rx="29" fill="#f3e3b5"/>
+      <ellipse cx="610" cy="270" rx="58" ry="44" fill="#f5c518"/>
+      <ellipse cx="96" cy="282" rx="44" ry="34" fill="#f7d23e"/>
+    </svg>
+    <div class="shield"></div>
+    <figcaption>The loaf, the morning after: the syrup has soaked all the way through.</figcaption>
+  </figure>
+
+  <p>My grandmother made this cake on Sundays, in a tin so dented it could only have been older than she was. She never wrote the recipe down. When I finally stood next to her with a notebook, she measured everything with the same chipped teacup, so the quantities below are my best translation of teacups into grams.</p>
+  <p>The method is the old one for a reason. Creaming the butter and sugar for a full five minutes is what makes the crumb light; the syrup, poured over the hot cake, is what makes it keep.</p>
+
+  <h2>Ingredients</h2>
+  <ul>
+    <li>175 g soft butter and 175 g caster sugar</li>
+    <li>3 eggs, at room temperature</li>
+    <li>175 g self-raising flour and a pinch of salt</li>
+    <li>The zest of 2 lemons, and 4 tablespoons of milk</li>
+    <li>For the syrup: the juice of 2 lemons and 100 g granulated sugar</li>
+  </ul>
+
+  <h2>Method</h2>
+  <ol>
+    <li>Heat the oven to 180 °C (160 °C fan). Line a 900 g loaf tin with baking paper.</li>
+    <li>Beat the butter and sugar until pale and fluffy, a good five minutes. Beat in the eggs one at a time.</li>
+    <li>Fold in the flour, salt and zest, then the milk. Scrape into the tin and bake for 45 to 50 minutes, until a skewer comes out clean.</li>
+    <li>While it bakes, stir the lemon juice and granulated sugar together. Don't let it dissolve: the crunch is the point.</li>
+    <li>Prick the hot cake all over and spoon the syrup over it. Leave it in the tin until completely cold.</li>
+  </ol>
+
+  <section class="newsletter">
+    <h2>Get a recipe every Sunday</h2>
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="off" placeholder="you@example.com">
+    <label for="confirm">Confirm email</label>
+    <input id="confirm" type="email" autocomplete="off" placeholder="Type it again: pasting is not allowed" onpaste="return false">
+  </section>
+</main>
+<footer><div class="wrap">© The Pantry Journal. A made-up site for trying Page Unlocker for Safari. Nothing here is collected or sent anywhere.</div></footer>
+<div class="toast" id="toast"></div>
+<script>
+  // ?shot hides the tip (App Store screenshots).
+  if (/[?&]shot\b/.test(location.search)) document.getElementById('tip').remove();
+  const toast = (text) => { const t = document.getElementById('toast'); t.textContent = text; t.style.display = 'block'; setTimeout(() => { t.style.display = 'none'; }, 1800); };
+  // The page's blocks, as copy-protection scripts write them.
+  document.addEventListener('contextmenu', (e) => { e.preventDefault(); toast('Right-click is disabled on this site.'); });
+  document.addEventListener('copy', (e) => {
+    e.preventDefault();
+    e.clipboardData.setData('text/plain', 'Read the full recipe at https://thepantry.example/lemon-cake');
+    toast('Copying is not allowed.');
+  });
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && ['a', 'c', 'p', 's', 'u'].includes(e.key.toLowerCase())) { e.preventDefault(); toast('That shortcut is disabled.'); }
+  });
+  document.addEventListener('mousedown', (e) => { if (e.detail > 1) e.preventDefault(); });
+  window.addEventListener('beforeprint', () => { document.querySelector('main').style.visibility = 'hidden'; });
+  window.addEventListener('afterprint', () => { document.querySelector('main').style.visibility = ''; });
+</script>
+</body>
+</html>

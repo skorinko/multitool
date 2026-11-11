@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spring Glazes · Kilnhouse Ceramics</title>
+<meta name="description" content="A page to try Color Picker for Safari on: pick a pixel from the picture, the exact CSS color of a glaze, or the whole page's palette.">
+<link rel="icon" href="img/icon.png">
+<style>
+  /* The page's own color variables: Color Picker lists them under "Color variables". */
+  :root {
+    color-scheme: light;
+    --clay: #b5653f;
+    --ink: #24201c;
+    --paper: #faf6f0;
+    --muted: #776d63;
+    --rule: #e8dfd3;
+    --celadon: oklch(76% 0.075 165);
+    --cobalt: oklch(46% 0.16 262);
+  }
+  /* ?dark, or the reader's dark mode. */
+  .dark { color-scheme: dark; --ink: #f1ebe3; --paper: #1b1917; --muted: #a59a8e; --rule: #34302c; }
+  @media (prefers-color-scheme: dark) { :root:not(.light) { color-scheme: dark; --ink: #f1ebe3; --paper: #1b1917; --muted: #a59a8e; --rule: #34302c; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 -apple-system, "Helvetica Neue", sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .top { border-bottom: 1px solid var(--rule); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .masthead { font: 700 21px/1 Charter, "Iowan Old Style", Georgia, serif; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+  .masthead span { color: var(--clay); }
+  .top nav { display: flex; gap: 22px; font-size: 15px; }
+  .top nav a { color: var(--muted); text-decoration: none; }
+  .tip { margin: 22px 0 0; padding: 12px 16px; border-radius: 10px; background: color-mix(in srgb, var(--clay) 12%, var(--paper)); font-size: 15px; line-height: 1.5; color: var(--muted); }
+  .tip strong { color: var(--ink); }
+  .hero { display: grid; gap: 32px; align-items: center; padding: 40px 0 56px; }
+  @media (min-width: 860px) { .hero { grid-template-columns: 5fr 6fr; gap: 48px; } }
+  .eyebrow { margin: 0 0 12px; color: var(--clay); font-size: 14px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; }
+  h1 { font: 700 52px/1.05 Charter, "Iowan Old Style", Georgia, serif; letter-spacing: -0.02em; margin: 0 0 16px; }
+  .lead { margin: 0 0 24px; font-size: 19px; color: var(--muted); }
+  .btn { display: inline-block; padding: 12px 22px; border-radius: 999px; background: var(--clay); color: #fff; font-weight: 600; text-decoration: none; }
+  .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--rule); margin-left: 8px; }
+  .photo { border-radius: 18px; overflow: hidden; box-shadow: 0 18px 40px rgba(36, 32, 28, 0.18); }
+  .photo svg { display: block; width: 100%; height: auto; }
+  h2 { font: 700 34px/1.15 Charter, "Iowan Old Style", Georgia, serif; letter-spacing: -0.015em; margin: 0 0 8px; }
+  .section-lead { margin: 0 0 28px; color: var(--muted); }
+  .glazes { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .card { border: 1px solid var(--rule); border-radius: 16px; padding: 14px; background: color-mix(in srgb, var(--paper) 92%, #fff); }
+  .dark .card { background: #23201d; }
+  .glaze { height: 128px; border-radius: 10px; background: var(--g); box-shadow: inset 0 -18px 30px rgba(0, 0, 0, 0.16), inset 0 10px 22px rgba(255, 255, 255, 0.22); }
+  .card h3 { margin: 12px 0 2px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .card code { display: inline-block; margin-top: 8px; font: 13px ui-monospace, Menlo, monospace; color: var(--muted); }
+  .note { margin: 64px 0 0; padding: 40px 24px; border-radius: 20px; background: var(--clay); }
+  .note-card { max-width: 620px; margin: 0 auto; padding: 22px 26px; border-radius: 14px; background: rgba(255, 255, 255, 0.7); color: #24201c; }
+  .note-card h3 { margin: 0 0 6px; font: 700 22px/1.25 Charter, "Iowan Old Style", Georgia, serif; }
+  .note-card p { margin: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .tag { padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+  .studio { margin-top: 64px; padding: 56px 0 64px; background: #24201c; color: #f1ebe3; }
+  .studio p { color: #c9bfb3; max-width: 640px; }
+  .studio a { color: var(--celadon); }
+  .studio .stats { display: flex; flex-wrap: wrap; gap: 36px; margin-top: 24px; }
+  .studio .stats b { display: block; font: 700 34px/1.1 Charter, "Iowan Old Style", Georgia, serif; color: #e9b48f; }
+  footer { padding: 24px 0 48px; background: #24201c; color: #8f857a; font-size: 14px; border-top: 1px solid #3a352f; }
+  @media (max-width: 640px) { h1 { font-size: 38px; } .top nav { display: none; } .btn.ghost { margin: 10px 0 0; } }
+</style>
+<script>
+  // ?dark and ?light pick a theme regardless of the system setting; ?shot hides the tip.
+  const q = location.search;
+  if (/[?&]dark\b/.test(q)) document.documentElement.classList.add('dark');
+  if (/[?&]light\b/.test(q)) document.documentElement.classList.add('light');
+  if (/[?&]shot\b/.test(q)) document.documentElement.classList.add('shot');
+</script>
+<style>.shot .tip { display: none; }</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="masthead" href="./">Kiln<span>house</span></a>
+  <nav><a href="#glazes">Glazes</a><a href="#studio">Studio</a><a href="#">Classes</a><a href="#">Visit</a></nav>
+</div></header>
+<main>
+<div class="wrap">
+<p class="tip"><strong>Try Color Picker here.</strong> On a Mac, click the Color Picker button in Safari’s toolbar, then Pick a Color (or press ⌃⇧C), and click anywhere on the page. On iPhone and iPad, tap the page menu button beside the address, then Color Picker, then Pick a Color; drag your finger and lift it. Try Element and Palette in the bar at the top of the page, too.</p>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">Spring collection</p>
+    <h1>Glazes that catch the light</h1>
+    <p class="lead">Six new glazes, mixed and fired in our studio. Each one changes a little with the clay underneath and the heat of the kiln, so no two pots come out quite the same.</p>
+    <a class="btn" href="#glazes">See the glazes</a><a class="btn ghost" href="#studio">Visit the studio</a>
+  </div>
+  <div class="photo" role="img" aria-label="A celadon vase and a copper red bowl on a wooden table, lit from a window">
+    <svg viewBox="0 0 600 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4e7d6"/><stop offset="0.55" stop-color="#e6cfb4"/><stop offset="1" stop-color="#c9a988"/></linearGradient>
+        <radialGradient id="window" cx="0.22" cy="0.18" r="0.5"><stop offset="0" stop-color="#fffaf0" stop-opacity="0.95"/><stop offset="1" stop-color="#fffaf0" stop-opacity="0"/></radialGradient>
+        <linearGradient id="table" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a6a45"/><stop offset="1" stop-color="#5e3d26"/></linearGradient>
+        <radialGradient id="vase" cx="0.35" cy="0.35" r="0.75"><stop offset="0" stop-color="#d6efe2"/><stop offset="0.35" stop-color="#9ccdb4"/><stop offset="0.75" stop-color="#5f9c84"/><stop offset="1" stop-color="#2f5f52"/></radialGradient>
+        <radialGradient id="bowl" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#f08a72"/><stop offset="0.45" stop-color="#c0392b"/><stop offset="1" stop-color="#5c1610"/></radialGradient>
+        <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#2a1a0f" stop-opacity="0.45"/><stop offset="1" stop-color="#2a1a0f" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="600" height="440" fill="url(#wall)"/>
+      <rect width="600" height="440" fill="url(#window)"/>
+      <rect y="318" width="600" height="122" fill="url(#table)"/>
+      <path d="M0 330 Q300 322 600 334" stroke="#b9875f" stroke-width="2" fill="none" opacity="0.5"/>
+      <path d="M0 372 Q300 364 600 380" stroke="#7a5034" stroke-width="2" fill="none" opacity="0.5"/>
+      <ellipse cx="250" cy="336" rx="110" ry="16" fill="url(#shadow)"/>
+      <ellipse cx="438" cy="344" rx="96" ry="13" fill="url(#shadow)"/>
+      <path d="M215 104 C214 84 286 84 285 104 C284 128 268 136 270 156 C276 196 330 220 326 272 C322 316 288 338 250 338 C212 338 178 316 174 272 C170 220 224 196 230 156 C232 136 216 128 215 104 Z" fill="url(#vase)"/>
+      <ellipse cx="250" cy="100" rx="35" ry="8" fill="#2f5f52"/>
+      <path d="M205 236 C210 214 226 204 236 198" stroke="#ffffff" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.45"/>
+      <path d="M360 296 C362 330 404 348 438 348 C472 348 514 330 516 296 Z" fill="url(#bowl)"/>
+      <ellipse cx="438" cy="296" rx="78" ry="13" fill="#7c2118"/>
+      <ellipse cx="438" cy="294" rx="70" ry="9" fill="#4a120c"/>
+      <path d="M378 310 C384 326 398 336 412 340" stroke="#ffd2c4" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+</section>
+
+<section id="glazes">
+  <h2>The spring glazes</h2>
+  <p class="section-lead">Each swatch is painted with the color we mix to, written beside it.</p>
+  <div class="glazes">
+    <div class="card"><div class="glaze" style="--g: var(--celadon)"></div><h3>Celadon</h3><p>Pale jade, glassy and deep where it pools.</p><code>oklch(76% 0.075 165)</code></div>
+    <div class="card"><div class="glaze" style="--g: #c0392b"></div><h3>Copper Red</h3><p>Fired without air, so the copper turns red.</p><code>#c0392b</code></div>
+    <div class="card"><div class="glaze" style="--g: var(--cobalt)"></div><h3>Cobalt</h3><p>The blue of old delftware, a little softer.</p><code>oklch(46% 0.16 262)</code></div>
+    <div class="card"><div class="glaze" style="--g: #ecdcc4"></div><h3>Shino</h3><p>Warm white with orange where it runs thin.</p><code>#ecdcc4</code></div>
+    <div class="card"><div class="glaze" style="--g: #4a2c1d"></div><h3>Tenmoku</h3><p>Dark brown that breaks to rust on the rims.</p><code>#4a2c1d</code></div>
+    <div class="card"><div class="glaze" style="--g: rgb(214 176 74)"></div><h3>Ash Yellow</h3><p>Made with wood ash from our own kiln.</p><code>rgb(214 176 74)</code></div>
+  </div>
+
+  <div class="note">
+    <div class="note-card">
+      <h3>A note from the studio</h3>
+      <p>Glazes look different on a screen than in the hand: the colors here are as close as we can show them. Come and see them on the shelf, or ask us for a test tile.</p>
+      <div class="tags">
+        <span class="tag" style="background: var(--celadon); color: #1f3d33">Food safe</span>
+        <span class="tag" style="background: #f3d9c9; color: #7a2e1b">Oven safe</span>
+        <span class="tag" style="background: var(--cobalt); color: #fff">Made by hand</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="studio" id="studio">
+  <div class="wrap">
+    <h2>The studio</h2>
+    <p>Kilnhouse is a small pottery with two wheels, one gas kiln and a long table for classes. We throw, trim and glaze every piece ourselves, and fire on Thursdays. <a href="#">Book a visit</a>.</p>
+    <div class="stats">
+      <div><b>6</b>new glazes</div>
+      <div><b>1,280 °C</b>top firing</div>
+      <div><b>12</b>hours in the kiln</div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">A page to try <a href="./" style="color: #c9bfb3">Color Picker for Safari</a> on. Kilnhouse is made up for this demo.</div></footer>
+</body>
+</html>

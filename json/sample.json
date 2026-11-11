@@ -1,0 +1,40 @@
+{
+  "data": {
+    "id": "1042",
+    "type": "user",
+    "attributes": {
+      "name": "Ada Lovelace",
+      "email": "ada@example.com",
+      "verified": true,
+      "plan": "pro",
+      "avatar": "https://skorinko.github.io/json-prettifier/img/icon.png",
+      "accentColor": "#1d4ed8",
+      "createdAt": "2026-03-14T09:26:53Z",
+      "lastLogin": 1793438100,
+      "balance": 1284.5,
+      "followers": 18213,
+      "bio": null,
+      "languages": ["en", "fr", "it"]
+    },
+    "relationships": {
+      "organization": { "data": { "type": "organization", "id": "77" } },
+      "projects": {
+        "meta": { "count": 3 },
+        "data": [
+          { "type": "project", "id": "9007199254740993", "name": "Analytical Engine", "stars": 1843, "archived": false, "updatedAt": "2026-10-30T18:02:11Z" },
+          { "type": "project", "id": "9007199254740995", "name": "Notes on the Sketch", "stars": 920, "archived": false, "updatedAt": "2026-10-12T07:45:00Z" },
+          { "type": "project", "id": "9007199254740997", "name": "Bernoulli Numbers", "stars": 311, "archived": true, "updatedAt": "2025-12-01T12:00:00Z" }
+        ]
+      }
+    },
+    "links": { "self": "https://api.example.com/v1/users/1042", "projects": "https://api.example.com/v1/users/1042/projects" }
+  },
+  "included": [
+    {
+      "type": "organization",
+      "id": "77",
+      "attributes": { "name": "Difference Engines Ltd", "website": "https://example.com", "seats": 25, "billing": { "currency": "EUR", "monthly": 199.0, "nextInvoice": "2026-12-01" } }
+    }
+  ],
+  "meta": { "requestId": "req_8f14e45fceea167a5a36dedd4bea2543", "session": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMDQyIiwibmFtZSI6IkFkYSBMb3ZlbGFjZSIsInNjb3BlIjoicmVhZDpwcm9qZWN0cyIsImlhdCI6MTc5MzQzODEwMCwiZXhwIjo0MTAyNDQ0Nzk5fQ.bm90LWEtcmVhbC1zaWduYXR1cmUtanVzdC1hbi1leGFtcGxl", "rateLimit": { "limit": 5000, "remaining": 4987, "reset": 1793441700 } }
+}
